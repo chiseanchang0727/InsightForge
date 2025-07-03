@@ -1,0 +1,6 @@
+[theme]
+base="light"
+primaryColor = "#FFA500"        # orange accent
+backgroundColor = "#FFFFFF"     # white background
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#FFA500"           # orange text
