@@ -28,6 +28,9 @@ st.markdown("---")
 if st.session_state.page == "upload":
     st.header("Upload Files")
     uploaded = st.file_uploader("PDF File upload button", type=["pdf"])
+
+    #TODO: upload the real file to destination which is the VM currently
+
     if uploaded:
         data = uploaded.read()
         st.session_state.pdf_bytes = data
@@ -37,6 +40,12 @@ if st.session_state.page == "upload":
             st.rerun()
 
 # ---- PAGE 2: VIEW & ANNOTATE ----
+
+#TODO: condition check: edited or not, if edited show previous record
+#TODO: scroll 
+#TODO: when clicking show previous record, if the file_name and page is occupied show latest record
+#TODO: when submit, insert a new row
+
 else:
     st.header(f"Viewing: {st.session_state.pdf_name}")
 
@@ -80,4 +89,10 @@ else:
             # Here you would call your API to insert into the database
             # insert_into_db(st.session_state.pdf_name, cp, desc)
             st.success("✅ Saved!")
- 
+
+# ---- PAGE 3: HISTORY CHECK PAGE----
+#TODO: A page for user to check the current completeness
+#TODO: It shows: the uploaded files,  the completeness percentage
+
+
+# ---- PAGE 4: Search Page ----
